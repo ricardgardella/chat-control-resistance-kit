@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chat Control Resistance Kit — Privacy tools that survive scanning mandates</title>
-<meta name="description" content="A practical toolkit of messaging, storage, and network tools whose architecture makes mass surveillance and client-side scanning expensive — not tools that just promise not to comply.">
+<title>Chat Control Resistance Kit: privacy tools that survive scanning mandates</title>
+<meta name="description" content="Messaging, storage, and network tools picked for their architecture, not for what the company running them promises. A practical toolkit for the post-Chat Control landscape.">
 
 <!-- Open Graph / X (Twitter) card -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chat Control Resistance Kit">
-<meta property="og:description" content="Tools whose architecture makes mass scanning expensive — not tools that just promise not to.">
+<meta property="og:description" content="Tools picked for architecture, not promises.">
 <meta property="og:image" content="https://ricardgardella.github.io/chat-control-resistance-kit/og-image.png">
 <meta property="og:url" content="https://ricardgardella.github.io/chat-control-resistance-kit/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chat Control Resistance Kit">
-<meta name="twitter:description" content="Tools whose architecture makes mass scanning expensive — not tools that just promise not to.">
+<meta name="twitter:description" content="Tools picked for architecture, not promises.">
 <meta name="twitter:image" content="https://ricardgardella.github.io/chat-control-resistance-kit/og-image.png">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23080b0f%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22none%22 stroke=%22%2349de9e%22 stroke-width=%228%22/></svg>">
@@ -117,21 +117,6 @@
     font-weight: 700;
   }
 
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  @media (max-width: 700px) { .facts { grid-template-columns: 1fr; } }
-  .fact {
-    background: var(--bg-raised);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .fact .num { color: var(--accent); font-weight: 800; font-size: 15px; display: block; margin-bottom: 8px; }
-  .fact p { margin: 0; font-size: 14.5px; color: var(--muted); }
-
   .picks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -144,7 +129,16 @@
     border-radius: 10px;
     padding: 22px;
   }
+  .pick-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
   .pick .tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 700; }
+  .pick .badge {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+  }
   .pick h3 { margin: 10px 0 8px; font-size: 19px; }
   .pick p { margin: 0 0 14px; color: var(--muted); font-size: 14.5px; }
   .pick a.link { font-size: 14px; font-weight: 600; }
@@ -165,25 +159,20 @@
   }
   .why-list strong { color: var(--text); }
 
-  .deep-dive {
-    background: var(--bg-raised);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .deep-dive h3 { margin: 0 0 6px; font-size: 20px; }
-  .deep-dive p { margin: 0; color: var(--muted); font-size: 14.5px; }
-
   footer {
     padding: 40px 0 60px;
     color: var(--muted);
     font-size: 14px;
   }
+  .x-row { margin-top: 10px; }
+  .x-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .x-row a:hover { color: var(--accent); }
   footer .cta {
     background: var(--bg-raised);
     border: 1px solid var(--border);
@@ -201,78 +190,63 @@
 
   <header class="hero">
     <div class="eyebrow">Privacy / Anti-Surveillance Toolkit</div>
-    <h1>Your "private" chat isn't as private as the law wants it to stay.</h1>
+    <h1>Your "private" chat isn't as private as you think</h1>
     <p class="lede">
-      On 9 July 2026, the EU revived mass chat-scanning rules through a procedural
-      maneuver. Encrypted apps got a carve-out <strong>this time</strong> — because
-      lawmakers chose to allow it, not because the architecture forced their hand.
-      The next vote can go differently. This kit lists communication tools built so
-      that mass scanning is expensive or structurally impossible, regardless of what
-      any future law demands.
+      On 9 July 2026, the European Parliament pushed through a procedural extension
+      of the Chat Control 1.0 scanning rules. Encrypted apps got an exemption this time,
+      but that's because lawmakers wrote one in, not because the technology forced
+      their hand. The permanent version of this law is still coming. Below is a list
+      of communication tools to protect your privacy from chat control.
+      <br><br>
+      Privacy is not a crime.
     </p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">See the full toolkit →</a>
+      <a class="btn btn-primary" href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">See the full toolkit</a>
       <a class="btn btn-secondary" href="#quick-picks">Quick picks for non-technical users</a>
     </div>
   </header>
 
   <section>
-    <h2>Why "it's encrypted" isn't the end of the conversation</h2>
+    <h2>What "it's encrypted" doesn't cover</h2>
     <ul class="why-list">
-      <li><strong>Encryption protects content, not metadata.</strong> Who you talk to, when, and how often is often the actual target of mass surveillance regimes — and most E2EE apps don't hide it.</li>
-      <li><strong>A carve-out is a policy, not a wall.</strong> If a single company controls the app, a single legal order can flip its behavior for every user overnight.</li>
-      <li><strong>Decentralized and self-hosted tools remove the single point of compulsion.</strong> There's no one server, no one company, no one court order that reaches everyone at once.</li>
+      <li><strong>Encryption protects what you say, not who you're saying it to.</strong> Who's talking to whom, and how often, is usually the part mass surveillance actually cares about.</li>
+      <li><strong>A carve-out is just a policy someone can reverse.</strong> When one company runs the app for everyone, one legal order changes it for everyone. That's the whole vulnerability.</li>
+      <li><strong>Self-hosted and decentralized tools take away the single target.</strong> No one server or company sees enough of the network to be worth compelling in the first place.</li>
     </ul>
   </section>
 
   <section id="quick-picks">
-    <h2>Quick picks — start here</h2>
+    <h2>Quick picks to start with</h2>
     <div class="picks">
       <div class="pick">
-        <span class="tag">Messaging</span>
+        <div class="pick-head"><span class="tag">Messaging</span><span class="badge">Open source</span></div>
         <h3>SimpleX Chat</h3>
-        <p>No phone number, no username, no account graph to subpoena. Closest thing to a drop-in WhatsApp replacement with real architectural resistance.</p>
-        <a class="link" href="https://simplex.chat" target="_blank" rel="noopener">simplex.chat →</a>
+        <p>No phone number, no username, nothing resembling an account graph to subpoena. About the closest thing to a drop-in WhatsApp replacement that also has real architecture behind it.</p>
+        <a class="link" href="https://simplex.chat" target="_blank" rel="noopener">simplex.chat</a>
       </div>
       <div class="pick">
-        <span class="tag">Storage</span>
+        <div class="pick-head"><span class="tag">Storage</span><span class="badge">Open source</span></div>
         <h3>Cryptomator</h3>
-        <p>Encrypts your files client-side before they touch Google Drive, Dropbox, or any cloud provider. Zero migration friction, zero plaintext exposure.</p>
-        <a class="link" href="https://cryptomator.org" target="_blank" rel="noopener">cryptomator.org →</a>
+        <p>Encrypts your files before Google Drive or Dropbox ever sees them. You keep the same cloud account you already use; the provider just gets ciphertext instead of your files.</p>
+        <a class="link" href="https://cryptomator.org" target="_blank" rel="noopener">cryptomator.org</a>
       </div>
       <div class="pick">
-        <span class="tag">Network</span>
-        <h3>Mullvad VPN</h3>
-        <p>No email, no name — just a random account number. Accepts cash. Audited no-logs track record with real-world proof.</p>
-        <a class="link" href="https://mullvad.net" target="_blank" rel="noopener">mullvad.net →</a>
+        <div class="pick-head"><span class="tag">Network</span><span class="badge">App open source, server audited</span></div>
+        <h3>Proton VPN or Mullvad</h3>
+        <p>Proton VPN has passed five straight years of independent no-logs audits. Mullvad skips identity entirely: random account number, cash accepted. Either is a solid pick. If you actually need anonymity rather than just an encrypted pipe, pair one with Tor.</p>
+        <a class="link" href="https://protonvpn.com" target="_blank" rel="noopener">protonvpn.com</a>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>The bigger picture</h2>
-    <div class="facts">
-      <div class="fact"><span class="num">20+ tools</span><p>Covering messaging, email, VPN, storage, OS, and browsers — ranked by architecture, not marketing.</p></div>
-      <div class="fact"><span class="num">Migration paths</span><p>Concrete "from X to Y" flows: WhatsApp → SimpleX, Telegram → Session, Google Drive → self-hosted.</p></div>
-      <div class="fact"><span class="num">Honest limits</span><p>Every tool ships with its real limitation — including Signal's. No hype, no unverified claims.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="deep-dive">
-      <div>
-        <h3>Full technical toolkit on GitHub</h3>
-        <p>Comparison tables, self-hosting guides, opsec basics, and every tool's "why it helps" — for the readers who want the details.</p>
-      </div>
-      <a class="btn btn-primary" href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">Open the repo →</a>
     </div>
   </section>
 
   <footer>
-    <div class="cta">
-      If you run a team or high-value operation and want help designing or migrating to a scan-resistant communications stack, reach out on X.
+    <div>Chat Control Resistance Kit. <a href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">Full toolkit on GitHub</a></div>
+    <div class="x-row">
+      <a href="https://x.com/ricardgardella" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>@ricardgardella</span>
+      </a>
     </div>
-    <div>Chat Control Resistance Kit — <a href="https://github.com/ricardgardella/chat-control-resistance-kit">source on GitHub</a></div>
   </footer>
 
 </div>
