@@ -81,7 +81,7 @@ A VPN hides your traffic from your ISP and shifts trust to the provider. It does
 ## Additional Hardening 🔧
 
 - **2FA via hardware keys (YubiKey, Nitrokey)** - FIDO2/WebAuthn beats SMS 2FA, which is a SIM-swap and metadata-linkage risk.
-- **De-Google / de-Apple if feasible** - GrapheneOS is the most mature option; works on non-Pixel hardware with weaker hardening. Apple is considered more private than Android.
+- **De-Google / de-Apple if feasible** - GrapheneOS is the most mature option, but works only on Pixel phones (buy the phone outside the EU). If Graphene is not an option, go for an iPhone.
 - **Firmware and update hygiene** - Full-disk encryption is worthless on a device booting an untrusted or out-of-date bootloader.
 
 <!-- Add new hardening tip here -->
