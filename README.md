@@ -91,7 +91,6 @@ A VPN hides your traffic from your ISP and shifts trust to the provider. It does
 ## Quick Migration Paths 🔀
 
 - **WhatsApp → SimpleX Chat or Matrix/Element** - Install SimpleX Chat (no phone number needed, run it alongside WhatsApp during transition), migrate close contacts first, then stand up a small Matrix homeserver for group-heavy use cases before archiving WhatsApp.
-- **Telegram → SimpleX Chat or Delta Chat** - Telegram isn't E2EE by default and never for groups, so treat this as urgent. Move 1:1 contacts to SimpleX Chat; move community/broadcast groups to a self-hosted Matrix space or Delta Chat. Export chat history first (Settings → Advanced → Export Telegram Data).
 - **Google Drive/Dropbox → Cryptomator, or Self-Hosted Nextcloud** - Quick path: install Cryptomator on your existing cloud account, zero migration needed. Long path: stand up self-hosted Nextcloud and layer Cryptomator on top. Migrate your password manager to self-hosted Vaultwarden in parallel.
 
 <!-- Add new migration path here -->
