@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat Control Resistance Kit: privacy tools that survive scanning mandates</title>
+<meta name="description" content="Messaging, storage, and network tools picked for their architecture, not for what the company running them promises. A practical toolkit for the post-Chat Control landscape.">
+
+<!-- Open Graph / X (Twitter) card -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chat Control Resistance Kit">
+<meta property="og:description" content="Tools picked for architecture, not promises.">
+<meta property="og:image" content="https://ricardgardella.github.io/chat-control-resistance-kit/og-image.png">
+<meta property="og:url" content="https://ricardgardella.github.io/chat-control-resistance-kit/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chat Control Resistance Kit">
+<meta name="twitter:description" content="Tools picked for architecture, not promises.">
+<meta name="twitter:image" content="https://ricardgardella.github.io/chat-control-resistance-kit/og-image.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23080b0f%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22none%22 stroke=%22%2349de9e%22 stroke-width=%228%22/></svg>">
+
+<style>
+  :root {
+    --bg: #080b0f;
+    --bg-raised: #10151b;
+    --border: #202932;
+    --text: #e8ecf0;
+    --muted: #8b98a3;
+    --accent: #49de9e;
+    --accent-dim: #2c8f66;
+    --danger: #e0785c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 3px;
+    background: var(--accent);
+    display: inline-block;
+    border-radius: 2px;
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 54px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .lede {
+    font-size: clamp(17px, 2.4vw, 20px);
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 0 30px;
+  }
+  .lede strong { color: var(--text); }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .btn:hover { text-decoration: none; }
+  .btn-primary {
+    background: var(--accent);
+    color: #05130c;
+  }
+  .btn-primary:hover { background: #63e6ad; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); background: rgba(73,222,158,0.06); }
+
+  section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 26px;
+    font-weight: 700;
+  }
+
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 700px) { .picks { grid-template-columns: 1fr; } }
+  .pick {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .pick-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .pick .tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 700; }
+  .pick .badge {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+  }
+  .pick h3 { margin: 10px 0 8px; font-size: 19px; }
+  .pick p { margin: 0 0 14px; color: var(--muted); font-size: 14.5px; }
+  .pick a.link { font-size: 14px; font-weight: 600; }
+
+  .why-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .why-list li {
+    padding-left: 26px;
+    position: relative;
+    color: var(--muted);
+    font-size: 15.5px;
+  }
+  .why-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .why-list strong { color: var(--text); }
+
+  footer {
+    padding: 40px 0 60px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .x-row { margin-top: 10px; }
+  .x-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .x-row a:hover { color: var(--accent); }
+  footer .cta {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 24px;
+    color: var(--text);
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Privacy / Anti-Surveillance Toolkit</div>
+    <h1>Your "private" chat isn't as private as you think</h1>
+    <p class="lede">
+      On 9 July 2026, the European Parliament pushed through a procedural extension
+      of the Chat Control 1.0 scanning rules. Encrypted apps got an exemption this time,
+      but that's because lawmakers wrote one in, not because the technology forced
+      their hand. The permanent version of this law is still coming. Below is a list
+      of communication tools to protect your privacy from chat control.
+      <br><br>
+      Privacy is not a crime.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">See the full toolkit</a>
+      <a class="btn btn-secondary" href="#quick-picks">Quick picks for non-technical users</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>What "it's encrypted" doesn't cover</h2>
+    <ul class="why-list">
+      <li><strong>Encryption protects what you say, not who you're saying it to.</strong> Who's talking to whom, and how often, is usually the part mass surveillance actually cares about.</li>
+      <li><strong>A carve-out is just a policy someone can reverse.</strong> When one company runs the app for everyone, one legal order changes it for everyone. That's the whole vulnerability.</li>
+      <li><strong>Self-hosted and decentralized tools take away the single target.</strong> No one server or company sees enough of the network to be worth compelling in the first place.</li>
+    </ul>
+  </section>
+
+  <section id="quick-picks">
+    <h2>Quick picks to start with</h2>
+    <div class="picks">
+      <div class="pick">
+        <div class="pick-head"><span class="tag">Messaging</span><span class="badge">Open source</span></div>
+        <h3>SimpleX Chat</h3>
+        <p>No phone number, no username, nothing resembling an account graph to subpoena. About the closest thing to a drop-in WhatsApp replacement that also has real architecture behind it.</p>
+        <a class="link" href="https://simplex.chat" target="_blank" rel="noopener">simplex.chat</a>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><span class="tag">Storage</span><span class="badge">Open source</span></div>
+        <h3>Cryptomator</h3>
+        <p>Encrypts your files before Google Drive or Dropbox ever sees them. You keep the same cloud account you already use; the provider just gets ciphertext instead of your files.</p>
+        <a class="link" href="https://cryptomator.org" target="_blank" rel="noopener">cryptomator.org</a>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><span class="tag">Network</span><span class="badge">App open source, server audited</span></div>
+        <h3>Proton VPN or Mullvad</h3>
+        <p>Proton VPN has passed five straight years of independent no-logs audits. Mullvad skips identity entirely: random account number, cash accepted. Either is a solid pick. If you actually need anonymity rather than just an encrypted pipe, pair one with Tor.</p>
+        <a class="link" href="https://protonvpn.com" target="_blank" rel="noopener">protonvpn.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Chat Control Resistance Kit. <a href="https://github.com/ricardgardella/chat-control-resistance-kit#readme">Full toolkit on GitHub</a></div>
+    <div class="x-row">
+      <a href="https://x.com/ricardgardella" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>@ricardgardella</span>
+      </a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
