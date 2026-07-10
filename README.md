@@ -7,7 +7,6 @@ On 9 July 2026, the European Parliament revived the "temporary" Chat Control 1.0
 ## Table of Contents
 
 - [Messaging](#messaging)
-- [Self-Hosted & Federated](#self-hosted--federated)
 - [Email & Communication](#email--communication)
 - [VPN & Transport](#vpn--transport)
 - [Storage & Files](#storage--files)
@@ -34,21 +33,10 @@ Priority goes to architectures with no central server that can be legally compel
 
 ---
 
-## Self-Hosted & Federated
-
-Owning your own infrastructure is the highest-leverage move against any mass-mandate scanning regime.
-
-- **Matrix Homeserver (Synapse / Dendrite / Conduit)** - Run your own federation node; a legal demand has to target you specifically, not a billion-user platform. Conduit is the lightest to self-host. Requires real sysadmin upkeep. https://conduit.rs, https://github.com/matrix-org/dendrite
-- **Headscale / Netmaker** - Self-hosted coordination plane for WireGuard mesh networks, replacing Tailscale's own servers. Still visible as WireGuard traffic to a network observer. https://headscale.net, https://netmaker.io
-
-<!-- Add new self-hosted tool here -->
-
----
-
 ## Email & Communication
 
 - **Proton Mail** - Zero-access encryption, Swiss jurisdiction, free tier available. Email metadata still leaks to non-Proton recipients by design. https://proton.me/mail
-- **Self-Hosted Mail (Mailcow, Mail-in-a-Box)** - Full control of your own mail server, no third party to compel. Deliverability (SPF/DKIM/DMARC, IP reputation) is genuinely hard to get right. https://mailcow.email, https://mailinabox.email
+- **Self-Hosted Mail (Mailcow, Mail-in-a-Box)** - Full control of your own mail server, no third party to compel. Deliverability (SPF/DKIM/DMARC, IP reputation) is genuinely hard to get right. Can https://mailcow.email, https://mailinabox.email
 - **Bitwarden (self-hosted / Vaultwarden)** - Self-hosted password vault that never touches a third-party server. Vaultwarden is an unofficial community reimplementation; backups are on you. https://bitwarden.com, https://github.com/dani-garcia/vaultwarden
 
 <!-- Add new email tool here -->
@@ -59,12 +47,12 @@ Owning your own infrastructure is the highest-leverage move against any mass-man
 
 A VPN hides your traffic from your ISP and shifts trust to the provider. It does not make you anonymous, does not protect message content, and is architecturally different from Tor.
 
-> **Exit-country tip:** the country your exit server sits in matters on its own, separate from where the VPN company is based, because it decides whose courts and data-retention laws apply. **Iceland** is the strongest current pick (no VPN-specific data retention, not in any Eyes alliance, no US MLAT). **Switzerland** is good but watch it closely: a proposed 2026 surveillance law (VÜPF) could force mandatory logging and ID verification on Swiss-based providers, including Proton VPN. PrivadoVPN already relocated from Switzerland to Iceland in 2025 over this exact risk.
-
 - **Mullvad** - Random account number, no email required, accepts cash and Monero, long audited no-logs track record. Sweden-based, subject to EU jurisdiction. https://mullvad.net
-- **Proton VPN (really good option)** - Five straight years of independently audited no-logs claims, tested in 400+ real legal requests. Swiss jurisdiction currently at risk from the proposed 2026 surveillance law above. https://protonvpn.com
+- **Proton VPN (really good option)** - Five straight years of independently audited no-logs claims, tested in 400+ real legal requests. https://protonvpn.com
 - **Self-Hosted WireGuard** - Run your own VPN endpoint, cutting any commercial provider out of the picture. Traceable directly to you via VPS billing records; doesn't provide anonymity. https://www.wireguard.com
-- **Tor (not a VPN)** - Three-hop anonymity network; no single relay sees both who you are and where you're going. Meaningfully slower, some services block exit nodes. Best combined as **VPN → Tor**, not the other way around. https://www.torproject.org
+- **Tor (not a VPN)** - Three-hop anonymity network; no single relay sees both who you are and where you're going. Can be combined with a VPN to have a double security and privacy protection.https://www.torproject.org
+
+> **Exit-country tip:** the country your exit VPN server sits in matters on its own, separate from where the VPN company is based, because it decides whose courts and data-retention laws apply. as per 10-07-2026, **Iceland** is the strongest current pick (no VPN-specific data retention, not in any Eyes alliance, no US MLAT). **Switzerland** is good but watch it closely: a proposed 2026 surveillance law (VÜPF) could force mandatory logging and ID verification on Swiss-based providers, including Proton VPN.
 
 <!-- Add new VPN tool here -->
 
@@ -82,9 +70,10 @@ A VPN hides your traffic from your ISP and shifts trust to the provider. It does
 
 ## Operating Systems & Browsers
 
-- **GrapheneOS** - Hardened Android, no Google Play Services by default. Pixel-only hardware for now; a Motorola partnership was announced for 2026 but no devices have shipped yet. https://grapheneos.org
+- **GrapheneOS** - Hardened Android, no Google Play Services by default. Pixel-only hardware for now. https://grapheneos.org
 - **Mullvad Browser** - Uniform fingerprint across all users, built with the Tor Project. Deliberately breaks some convenience features (persistent extensions, custom window size) to stay fingerprint-resistant. https://mullvad.net/en/browser
-- **Tor Browser** - Combines Tor's network anonymity with fingerprinting resistance. Meaningfully slower, some sites block Tor exit nodes outright. https://www.torproject.org/download/
+- **Tor Browser** - Combines Tor's network anonymity with fingerprinting resistance. https://www.torproject.org/download/
+- **Brave** - An open-source privacy focused browser. https://brave.com
 
 <!-- Add new browser tool here -->
 
@@ -93,9 +82,7 @@ A VPN hides your traffic from your ISP and shifts trust to the provider. It does
 ## Additional Hardening
 
 - **2FA via hardware keys (YubiKey, Nitrokey)** - FIDO2/WebAuthn beats SMS 2FA, which is a SIM-swap and metadata-linkage risk.
-- **De-Google / de-Apple your phone where feasible** - GrapheneOS is the most mature option; /e/OS works on non-Pixel hardware with weaker hardening.
-- **Metadata minimization discipline** - A strong tool used alongside a mainstream app "just in case" leaks the same metadata the strong tool was meant to hide.
-- **DNS-over-HTTPS/TLS with a privacy-respecting resolver** - Mullvad's own DNS or a self-hosted Pi-hole + Unbound stops your ISP from logging every domain you resolve.
+- **De-Google / de-Apple if feasible** - GrapheneOS is the most mature option; works on non-Pixel hardware with weaker hardening. Apple is considered more private than Android.
 - **Firmware and update hygiene** - Full-disk encryption is worthless on a device booting an untrusted or out-of-date bootloader.
 
 <!-- Add new hardening tip here -->
