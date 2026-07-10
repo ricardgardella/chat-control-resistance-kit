@@ -111,7 +111,7 @@ Bad operational security defeats good cryptography every time.
 - **Compartmentalize identities.** Don't reuse the same username, avatar, or writing style across a clean identity and a sensitive one.
 - **Assume metadata is the real target.** Who talked to whom, and when, is what mass surveillance actually optimizes for. Favor SimpleX or Briar for your most sensitive contacts.
 - **Minimize the parallel weak channel.** A contact you also message "sometimes" on WhatsApp/SMS makes that weak channel your real security level.
-- **Verify software integrity.** Download from official sites or F-Droid, verify checksums for anything sensitive, keep everything patched.
+- **Verify software integrity.** Download from **official sites*8 or F-Droid, verify checksums for anything sensitive, keep everything patched.
 - **Physical security still matters.** Full-disk encryption is defeated by an unlocked, unattended device.
 - **Backups need the same threat model as the original.** An encrypted phone backed up in plaintext to an unencrypted cloud account defeats the exercise.
 - **Don't over-engineer your threat model.** Match tool choice to actual risk; a simple setup you maintain beats a complex one you abandon after two weeks.
